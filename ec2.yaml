@@ -10,7 +10,7 @@
          instance_type: "{{ instance_type }}"
          image: ami-0a887e401f7654935
          wait: true
-         region: "{{ youre region }}"
+         region: "{{region}}"
          vpc_subnet_id: vpc-73705509
          assign_public_ip: yes
       register: ec2
