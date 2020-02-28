@@ -8,3 +8,4 @@
   roles:
     - {role: company_prerequisites}
     - {role: wordpress}
+    - {role: kernal_update}
