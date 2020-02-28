@@ -7,4 +7,20 @@
   ignore_errors: false
   tasks:
     - name: Block
-      
+      block: 
+        - name: Istall apache 
+          package: 
+            name: httpd
+            state: latest
+          notify: HTTPD  
+      rescue:
+        - name: Istall apache2
+          package:
+            name: apache2
+            state: latest
+          notify: HTTPD  
+
+  handlers: 
+    - name: HTTPD
+      systemd: httpd 
+      state: restarted        
