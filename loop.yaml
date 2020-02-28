@@ -1,0 +1,25 @@
+---
+- name: Loop
+  hosts: all
+  become: true
+  become_method: sudo
+  connection: ssh
+  ignore_errors: false
+  tasks:
+    - name: Loop
+      package:
+        name: "{{iten}}"
+        state: present
+      with_item:
+        - httpd 
+        - telnet 
+        - lftp 
+        - unzip 
+        - wget 
+
+    - name: Command
+      command: "{{items}}" 
+      with_items:
+        - "yum install telnet -y"
+        - "free -m"
+        - "w"
