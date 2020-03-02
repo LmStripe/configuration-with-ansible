@@ -1,7 +1,7 @@
 ---
 - name: Playbook for Creating VPC
   hosts: localhost
-  gather_facts: no
+  gather_facts: no 
   tasks:
     - name: Check host
       ping:
